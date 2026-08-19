@@ -2,7 +2,8 @@
 
 I set up two isolated virtual machines where VM 1 knew how to convert text to uppercase but didn't know the word was `secret`, while VM 2 held the actual word `secret` and converted it to `SECRET` locally without VM 1 ever seeing the text.
 
-A minimal **Bring Your Own Compute (BYOC)** prototype. Zero trust data plane execution, pull based gRPC scheduling over mTLS and sandboxed execution using Google's gVisor.
+Why it's cool: VM 1 provided the instructions (the script to run the transformation e.g. a->A), VM 2 provided the execution power and secret data.
+So VM 1 didn't see the text, while VM 2 carried out the work without coming up with the instructions itself.
 
 ## Architecture
 
