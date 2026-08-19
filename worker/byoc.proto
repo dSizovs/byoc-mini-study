@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package byoc;
+
+service ControlPlane {
+  rpc FetchTask (TaskRequest) returns (TaskResponse);
+  rpc SubmitResult (ResultRequest) returns (ResultResponse);
+}
+
+message TaskRequest {
+  string worker_id = 1;
+}
+
+message TaskResponse {
+  bool has_task = 1;
+  string task_id = 2;
+  string command = 3;
+}
+
+message ResultRequest {
+  string task_id = 1;
+  string worker_id = 2;
+  bool success = 3;
+  string status_message = 4;
+}
+
+message ResultResponse {
+  bool acknowledged = 1;
+}

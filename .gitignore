@@ -1,0 +1,15 @@
+# Ignore mTLS Private Keys and Certificates
+certs/out/
+*.key
+*.crt
+*.csr
+*.srl
+*.cnf
+
+# Ignore test data
+byoc_data/
+__pycache__/
+*.pyc
+
+# OS artifacts
+.DS_Store
